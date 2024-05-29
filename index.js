@@ -56,7 +56,7 @@ app.post('/auth', function(request, response) {
 	let username = request.body.username;
 	let password = request.body.password;
 	if (username && password) {
-			if (username == "Elfanaan" && password == "MegaproApi") {
+			if (username == process.env['username'] && password == process.env['password']) {
 				request.session.loggedin = true;
 				request.session.username = username;
 				response.redirect('/restartDone');
